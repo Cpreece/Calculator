@@ -9,13 +9,20 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: lavenderblush;
+  background-color: lightcyan;
   text-align: center;
+  height: 100%;
 }
 .head {
   width: 100%;
-
 }
+
+.content-upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .container {
   width: 300px;
 }
@@ -49,8 +56,6 @@ body {
   background-color: D6E1E3;
   padding: 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center; 
   border-radius: 0 0 15px 15px;
   padding: 1rem;
 }
@@ -69,6 +74,11 @@ body {
   background-color: #7B99A9;
   border-radius: 10px;
   cursor: pointer;
+  transition: filter .1s ease;
+}
+
+.pressed {
+  filter: brightness(50%)
 }
 
 .btn-dark {
@@ -103,4 +113,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+footer {
+  padding: 1rem;
 }

@@ -9,48 +9,51 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <div class="head">
-    <H1>Simple Calculator</H1>
-    <p>A lot of people... use a calculator!
-      -- Joe Strummer</p>
-  </div>
-  <div class="container">
-    <div class="calc">
-      <div class="calc-head">
-        <div class="display">
-          <div class="display-text"></div>
+  <div class="content-upper">
+    <div class="head">
+      <H1>Simple Calculator</H1>
+      <p>A lot of people... use a calculator!
+        -- Joe Strummer</p>
+    </div>
+    <div class="container">
+      <div class="calc">
+        <div class="calc-head">
+          <div class="display">
+            <div class="display-text"></div>
+          </div>
         </div>
-      </div>
-      <div class="calc-body">
-        <div class="buttons">
-          <div class="btn btn-dark clear">AC</div>
-          <div class="btn btn-dark bksp">&#8592;</div>
-          <div class="btn btn-dark operator">÷</div>
-          <div class="btn btn-dark operator">x</div>
-          <div class="btn num">7</div>
-          <div class="btn num">8</div>
-          <div class="btn num">9</div>
-          <div class="btn btn-dark operator">-</div>
-          <div class="btn num">4</div>
-          <div class="btn num">5</div>
-          <div class="btn num">6</div>
-          <div class="btn btn-dark operator">+</div>
-          <div class="btm-btns">
-            <div class="btm-btns-left">
-              <div class="btn num">1</div>
-              <div class="btn num">2</div>
-              <div class="btn num">3</div>
-              <div class="btn zero num">0</div>
-              <div class="btn num period">.</div>
+        <div class="calc-body">
+          <div class="buttons">
+            <div data-key="67" class="btn btn-dark clear">AC</div>
+            <div data-key="Backspace" class="btn btn-dark bksp">&#8592;</div>
+            <div data-key="/" class="btn btn-dark operator">÷</div>
+            <div data-key="*" class="btn btn-dark operator">x</div>
+            <div data-key="7" class="btn num">7</div>
+            <div data-key="8" class="btn num">8</div>
+            <div data-key="9" class="btn num">9</div>
+            <div data-key="-" class="btn btn-dark operator">-</div>
+            <div data-key="4" class="btn num">4</div>
+            <div data-key="5" class="btn num">5</div>
+            <div data-key="6" class="btn num">6</div>
+            <div data-key="+" class="btn btn-dark operator">+</div>
+            <div class="btm-btns">
+              <div class="btm-btns-left">
+                <div data-key="1" class="btn num">1</div>
+                <div data-key="2" class="btn num">2</div>
+                <div data-key="3" class="btn num">3</div>
+                <div data-key="0" class="btn zero num">0</div>
+                <div data-key="Period" class="btn num period">.</div>
+              </div>
+              <div data-key="Enter" class="btn equal operator">=</div>
             </div>
-            <div class="btn equal operator">=</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <footer>
+    Copyright © 2022 <a href="https://github.com/Cpreece">CPreece</a> 
+    <script src="./script.js"></script>
+  </footer>
 </body>
-<footer>
-  <script src="./script.js"></script>
-</footer>
 </html>

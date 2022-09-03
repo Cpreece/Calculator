@@ -12,6 +12,7 @@ function getInput() {
   } else return rawInput
 };
 
+//  math equations
 function add(a, b) {
   return a + b
 };
@@ -40,6 +41,7 @@ function applyOperation(op, a = 0, b) {
 
 
 function clickedNum(e) {
+  keyPressed(e);
   if (isSolution) {
    displayText.innerHTML = ''
    isSolution = false
@@ -57,6 +59,14 @@ function clickedNum(e) {
   return
 };
 
+function keyPressed(e) {
+  e.target.classList.add('pressed')
+}
+
+function removeTransition(e) {
+  console.log('remove')
+  e.target.classList.remove('pressed');
+}
 
 const numberKeys = document.querySelectorAll('.num');
 numberKeys.forEach(node => node.addEventListener("click", clickedNum));
@@ -85,6 +95,7 @@ function getOperator(symbol) {
 };
 
 function performOperation(e) {
+  keyPressed(e);
   const nextOperation = getOperator(e.target.innerHTML);
   input = displayText.innerHTML;
   if (input == '') return
@@ -116,6 +127,7 @@ const operators = document.querySelectorAll('.operator');
 operators.forEach(node => node.addEventListener("click", performOperation));
 
 function deleteLastInput (e) {
+  keyPressed(e);
   if (isSolution) return
   input = displayText.innerHTML;
   if (!input) return
@@ -126,3 +138,15 @@ function deleteLastInput (e) {
 const bksp = document.querySelector('.bksp');
 bksp.addEventListener("click", deleteLastInput);
 
+// keyboard support 
+
+window.addEventListener('keydown', 
+  function(e) {
+    const btnPressed = document.querySelector(`div[data-key="${e.key}"]`);
+    if (!btnPressed) return;
+    btnPressed.click()
+  }
+);
+
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
