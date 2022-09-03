@@ -22,7 +22,7 @@ function subtract(a,b) {
 
 function divide(a,b) {
   if (b == 0) {
-    alert('Not in my house.');
+    alert('NOT IN MY HOUSE.');
     displayText.innerHTML = '';
     return
   };
@@ -33,7 +33,7 @@ function multiply(a,b) {
   return a * b
 };
 
-function applyOperation(op, a, b) {
+function applyOperation(op, a = 0, b) {
   operation = '';
   return op(a,b)
 };
@@ -95,6 +95,17 @@ function performOperation(e) {
   } else {
     aNum = operation(parseFloat(aNum), parseFloat(input));
     operation = nextOperation;
+  };
+  if (aNum.toString().length > 13) {
+    let [int, decimals] = aNum.toString().split('.')
+    if(int > 10) {
+      aNum = aNum.toPrecision(1+ 7);
+      if (aNum.toString().length > 13) {
+        return alert ('Error: Exceeded Maximum Output');
+      };
+    } else {
+      aNum = `${int}.${Math.round(decimals / (10 ** (14-int)))}`
+    }
   };
   displayText.innerHTML = aNum;
   isSolution = true;
